@@ -237,12 +237,19 @@ img {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 1.2rem;
       margin-bottom: 0.8rem;
-      background: linear-gradient(135deg, #fdd673, #ffc857);
-      color: #212529;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(
+        to bottom,
+       #ffffff 0 33%,
+       #00966e 33% 66%,
+       #d62612 66% 100%
+      );
+      font-size: 0;
+      color: transparent;
     }
+
 
     .team-name {
       font-weight: 700;
