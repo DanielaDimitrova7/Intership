@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Places to visit</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <link href="style.css" rel="stylesheet"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="HomePage.html">Sicily Explorer</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="sanCataldoDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              San Cataldo
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="sanCataldoDropdown">
+              <li><a class="dropdown-item" href="SanCataldoHistory.html">History</a></li>
+              <li><a class="dropdown-item" href="SanCataldoGallery.html">Gallery</a></li>
+              <li><a class="dropdown-item" href="SanCataldoPlaces.html">Places to visit</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="Gabara.html">Gabara</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="palermoDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Palermo
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="palermoDropdown">
+              <li><a class="dropdown-item" href="PalermoHistory.html">History</a></li>
+              <li><a class="dropdown-item" href="PalermoGallery.html">Gallery</a></li>
+              <li><a class="dropdown-item" href="PalermoPlaces.html">Places to visit</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container container-narrow mb-5">
+    <h1 class="text-center places-title">Places to visit</h1>
+
+    <section class="place-card">
+      <img src="Photos/calvary.jpg" alt="Calvary complex in San Cataldo" class="place-image">
+
+      <div class="place-body">
+        <h2 class="place-name">Calvary complex in San Cataldo</h2>
+        <p class="place-description">
+          <span class="location-icon">📍</span>
+          The Calvary monumental complex in San Cataldo, where the traditional “Scinnenza” is held.
+        </p>
+        <div id="map1" class="place-map"></div>
+      </div>
+    </section>
+
+    <section class="place-card">
+      <img src="Photos/motherchurch.jpg" alt="Mother Church in San Cataldo" class="place-image">
+
+      <div class="place-body">
+        <h2 class="place-name">Mother Church in San Cataldo</h2>
+        <p class="place-description">
+          <span class="location-icon">📍</span>
+          The Mother Church of San Cataldo, located at one of the highest points of the town.
+        </p>
+        <div id="map2" class="place-map"></div>
+      </div>
+    </section>
+
+    <section class="place-card">
+      <img src="Photos/clocktower.jfif" alt="Clock Tower in San Cataldo" class="place-image">
+
+      <div class="place-body">
+        <h2 class="place-name">Clock Tower in San Cataldo</h2>
+        <p class="place-description">
+          <span class="location-icon">📍</span>
+          The civic Clock Tower, a symbol of the historic centre of San Cataldo.
+        </p>
+        <div id="map3" class="place-map"></div>
+      </div>
+    </section>
+
+    <h2 class="text-center mt-4 mb-3">BONUS</h2>
+
+    <section class="place-card">
+      <img src="Photos/bar-new-york.jpg"New York Bar in San Cataldo" class="place-image">
+
+      <div class="place-body">
+        <h2 class="place-name">New York Bar</h2>
+        <p class="place-description">
+          <span class="location-icon">📍</span>
+          A local bar on Corso Vittorio Emanuele, known for its arancini and Sicilian treats.
+        </p>
+        <div id="map4" class="place-map"></div>
+      </div>
+    </section>
+
+    <section class="place-card">
+      <img src="Photos/caffetteria-imera.jpg" alt="Pasticceria Imera in San Cataldo" class="place-image">
+
+      <div class="place-body">
+        <h2 class="place-name">Pasticceria Imera – Gelateria &amp; Caffetteria</h2>
+        <p class="place-description">
+          <span class="location-icon">📍</span>
+          A popular pastry shop and gelateria on Corso Sicilia, perfect for breakfast or afternoon coffee.
+        </p>
+        <div id="map5" class="place-map"></div>
+      </div>
+    </section>
+
+    <section class="place-card">
+      <img src="Photos/pizza.jfif" alt="StraPizzami in San Cataldo" class="place-image">
+
+      <div class="place-body">
+        <h2 class="place-name">StraPizzami</h2>
+        <p class="place-description">
+          <span class="location-icon">📍</span>
+          A pizzeria on Corso Sicilia, known for its takeaway pizzas and casual atmosphere.
+        </p>
+        <div id="map6" class="place-map"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-light text-center py-3 mt-3">
+    <div class="container">
+      <p class="mb-1">
+        Helping visitors discover San Cataldo, Gabara and Palermo through their history and culture.
+      </p>
+
+      <p class="mb-1">
+        <a href="About.html" class="text-info text-decoration-none">
+          About us
+        </a>
+      </p>
+
+      <p class="mb-0 small">
+        &copy; 2025 Sicily Explorer. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin="">
+  </script>
+
+  <script>
+
+    const calvaryCoords      = [37.48514, 13.98446]; 
+    const motherChurchCoords = [37.48544, 13.98825];
+    const clockTowerCoords   = [37.48333, 13.98333]; 
+
+    const newYorkBarCoords   = [37.48683, 13.99079];     
+    const imeraCoords        = [37.4878302, 13.9911779]; 
+    const strapizzamiCoords  = [37.49070, 13.99290];     
+
+    function createMap(containerId, coords, popupText) {
+      const map = L.map(containerId).setView(coords, 17);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      L.marker(coords).addTo(map).bindPopup(popupText);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      createMap('map1', calvaryCoords, 'Calvary complex in San Cataldo');
+      createMap('map2', motherChurchCoords, 'Mother Church in San Cataldo');
+      createMap('map3', clockTowerCoords, 'Clock Tower in San Cataldo');
+
+      createMap('map4', newYorkBarCoords, 'New York Bar – San Cataldo');
+      createMap('map5', imeraCoords, 'Pasticceria Imera – San Cataldo');
+      createMap('map6', strapizzamiCoords, 'StraPizzami – San Cataldo');
+    });
+  </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+</body>
+</html>
