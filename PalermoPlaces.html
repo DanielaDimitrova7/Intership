@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palermo - Places</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link href="style.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <link rel="icon" type="image/x-icon" href="Photos/logo.png">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="HomePage.html">
+      <img
+        src="/Photos/logo.png"
+        alt="Sicily Explorer logo"
+        class="me-2"
+        style="height: 40px;"
+      />
+      <span>Sicily Explorer</span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="sanCataldoDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            San Cataldo
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="sanCataldoDropdown">
+            <li><a class="dropdown-item" href="SanCataldoHistory.html">History</a></li>
+            <li><a class="dropdown-item" href="SanCataldoGallery.html">Gallery</a></li>
+            <li><a class="dropdown-item" href="SanCataldoPlaces.html">Places to visit</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="Gabara.html">Gabara</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="palermoDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Palermo
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="palermoDropdown">
+            <li><a class="dropdown-item" href="PalermoHistory.html">History</a></li>
+            <li><a class="dropdown-item" href="PalermoGallery.html">Gallery</a></li>
+            <li><a class="dropdown-item" href="PalermoPlaces.html">Places to visit</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <main class="container container-narrow mb-5">
+    <h1 class="text-center places-title">Places to visit in Palermo</h1>
+
+    <section class="place-card">
+      <img
+        src="Photos/TeatroMassimo.jpeg"
+        alt="Teatro Massimo in Palermo"
+        class="place-image"
+      />
+
+      <div class="place-body">
+        <h2 class="place-name">Teatro Massimo</h2>
+        <p class="place-description">
+          <span class="location-icon">📍</span>
+          One of the largest opera houses in Europe, famous for its acoustics
+          and its impressive neoclassical façade on Piazza Verdi.
+        </p>
+        <div id="map1" class="place-map"></div>
+      </div>
+    </section>
+
+    <section class="place-card">
+      <img
+        src="Photos/PalermoCathedral.jpg"
+        alt="Palermo Cathedral"
+        class="place-image"
+      />
+
+      <div class="place-body">
+        <h2 class="place-name">Palermo Cathedral</h2>
+        <p class="place-description">
+          <span class="location-icon">📍</span>
+          The Cathedral of Palermo mixes Norman, Gothic, Baroque and
+          Neoclassical elements and houses the tombs of Sicilian kings and
+          emperors.
+        </p>
+        <div id="map2" class="place-map"></div>
+      </div>
+    </section>
+
+    <section class="place-card">
+      <img
+        src="Photos/normanCastle.jpg"
+        alt="Norman Palace in Palermo"
+        class="place-image"
+      />
+
+      <div class="place-body">
+        <h2 class="place-name">Norman Palace (Palazzo dei Normanni)</h2>
+        <p class="place-description">
+          <span class="location-icon">📍</span>
+          The former royal palace of the Norman kings, today seat of the
+          Sicilian regional parliament and home to the stunning Palatine
+          Chapel.
+        </p>
+        <div id="map3" class="place-map"></div>
+      </div>
+    </section>
+
+    <section class="place-card">
+      <img
+        src="Photos/garden.jpg"
+        alt="Giardino Garibaldi in Palermo"
+        class="place-image"
+      />
+
+      <div class="place-body">
+        <h2 class="place-name">Giardino Garibaldi</h2>
+        <p class="place-description">
+          <span class="location-icon">📍</span>
+          Historic garden in Piazza Marina, known for its huge ficus trees and
+          a quiet atmosphere in the middle of the old town.
+        </p>
+        <div id="map4" class="place-map"></div>
+      </div>
+    </section>
+
+    <section class="place-card">
+      <img
+        src="Photos/fontanaPretoria.jpg"
+        alt="Fontana Pretoria in Palermo"
+        class="place-image"
+      />
+
+      <div class="place-body">
+        <h2 class="place-name">Fontana Pretoria</h2>
+        <p class="place-description">
+          <span class="location-icon">📍</span>
+          A monumental marble fountain in Piazza Pretoria, decorated with
+          statues of mythological figures and allegories.
+        </p>
+        <div id="map5" class="place-map"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-light text-center py-3 mt-3">
+    <div class="container">
+      <p class="mb-1">
+        Helping visitors discover San Cataldo, Gabara and Palermo through their
+        history and culture.
+      </p>
+
+      <p class="mb-1">
+        <a href="About.html" class="text-info text-decoration-none">
+          About us
+        </a>
+      </p>
+
+      <p class="mb-0 small">
+        &copy; 2025 Sicily Explorer. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script>
+    const teatroMassimoCoords = [38.11883, 13.35433];
+    const palermoCathedralCoords = [38.1087, 13.3537];
+    const normanPalaceCoords = [38.11121, 13.35327];
+    const giardinoGaribaldiCoords = [38.11722, 13.36833];
+    const fontanaPretoriaCoords = [38.11542, 13.3619];
+
+    function createMap(containerId, coords, popupText) {
+      const map = L.map(containerId).setView(coords, 17);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: "&copy; OpenStreetMap contributors",
+      }).addTo(map);
+
+      L.marker(coords).addTo(map).bindPopup(popupText);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      createMap("map1", teatroMassimoCoords, "Teatro Massimo");
+      createMap("map2", palermoCathedralCoords, "Palermo Cathedral");
+      createMap("map3", normanPalaceCoords, "Norman Palace (Palazzo dei Normanni)");
+      createMap("map4", giardinoGaribaldiCoords, "Giardino Garibaldi");
+      createMap("map5", fontanaPretoriaCoords, "Fontana Pretoria");
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
